@@ -1,0 +1,635 @@
+
+body {
+    font-family: 'Poppins', 'Times New Roman', Times, serif, sans-serif; /* Pasirinktas modernus šriftas */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.5px;
+}
+
+
+h1 {
+    font-size: 2.8rem;
+    color: #ed0404;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #22f857;
+    letter-spacing: 1.5px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #dd1b62;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: #e1f40d;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1.2rem;
+    color: #57023c;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 1rem;
+    color: #338573;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+p {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.8;
+    margin-bottom: 1.2em;
+}
+blockquote {
+    font-style: italic;
+    border-left: 4px solid #2b6cb0;
+    padding-left: 1em;
+    color: #dee6f2;
+    margin: 1em 0;
+}
+/* Užvedus pelę ant mygtuko */
+button:hover,
+.btn:hover {
+    background-color: #f52106;        /* Tamsesnė mėlyna */
+    transform: translateY(-10px) scale(90%);      /* Lengvas pakilimo efektas */
+    box-shadow: 0 6px 12px rgba(247, 0, 0, 0.15);
+}
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #f52106;
+    transform: scale3d(10) ;
+    color: #f52106;
+}
+.bi:hover {
+    color: #f52106;
+    transform: scale(1.2);
+}
+
+/* Paspausto (aktyvaus) mygtuko efektas */
+button:active,
+.btn:active {
+    transform: translateY(0);         /* Sugrįžta į vietą */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Antrinis (secondary) mygtuko variantas */
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #2d3748;
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e0;
+    color: #1a202c;
+}
+/* a. Vienodi tarpai tarp sekcijų */
+section {
+    padding: 800px; /* Viršuje ir apačioje po 80px */
+    margin: 0 auto;
+    max-width: 1200px; /* Maksimalus sekcijos plotis */
+}
+
+/* Užtikrina vienodą turinio išdėstymą */
+section > .container {
+    padding: 0 20px;
+}
+
+/* b. Sekcijų blokų (turinio) išvaizda */
+.about-section,
+.resume-section,
+.portfolio-section {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;        /* Švelni pilka kraštinė */
+    border-radius: 16px;              /* Užapvalinti kampai */
+    box-shadow: 0 8px 24px rgba(238, 71, 71, 0.08); /* Lengvas šešėlis */
+    padding: 40px;
+    margin-bottom: 60px;              /* Vienodas tarpas tarp sekcijų */
+    transition: all 0.3s ease;
+}
+
+/* Užvedus pelę – subtilus efektas */
+.about:hover,
+.resume:hover,
+.portfolio:hover,
+.services:hover,
+.contact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Sekcijų antraštės */
+.about h2,
+.resume h2,
+.portfolio h2,
+.services h2,
+.contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    color: #2a4365;
+    border-bottom: 3px solid #2b6cb0;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Turinys sekcijose (pvz. kortelės, aprašymai) */
+.about-content,
+.resume-content,
+.portfolio-content {
+    display: grid;
+    gap: 20px; /* Vienodas tarpas tarp blokų */
+}
+
+/* Kortelės (pvz., portfolio projektai ar patirtis) */
+.card {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.skill-item:hover{
+    transform: scale(1.5);
+    background:rgba(16, 205, 51, 0.08);
+}
+
+.icon-box:hover{
+    transform: translateY(-20px);
+}
+/* Lentelės baziniai nustatymai */
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center; /* Lygiavimas centre */
+}
+
+/* Antraštinė eilutė */
+.services-table thead th {
+  background-color: #2d6cdf; /* Išsiskirianti spalva */
+  color: white;
+  padding: 12px; /* Vienodas cell padding */
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Lentelės langelių stilius */
+.services-table td {
+  padding: 12px; /* Vienodas cell padding */
+  border: 1px solid #d5d5d5;
+}
+
+/* Zebra stilius */
+.services-table tbody tr:nth-child(even) {
+  background-color: #f3f6ff;
+}
+
+/* Hover efektas */
+.services-table tbody tr:hover {
+  background-color: #dbe6ff;
+  transition: 0.2s;
+}
+#scroll-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: #eb2525;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: none; /* bus rodomas tik slenkant žemyn */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.25s ease, background 0.25s ease;
+  z-index: 999;
+}
+
+#scroll-top:hover {
+  transform: translateY(-6px);
+  background: #1d4ed8;
+}
+
+
+
+
+/* ================================
+   CUSTOM LIST STYLES — MATCHING THEME
+   ================================ */
+
+/* Wrapper */
+.custom-lists-demo {
+  margin-top: 40px;
+  padding: 25px;
+  background: var(--surface-color);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* List titles */
+.custom-lists-demo h3,
+.custom-lists-demo h4 {
+  color: var(--heading-color);
+  margin-bottom: 15px;
+}
+
+/* ================================
+   UNORDERED LIST (BULLET)
+   ================================ */
+
+.custom-ul,
+.custom-ul ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.custom-ul li {
+  position: relative;
+  padding: 8px 0 8px 28px;
+  color: var(--default-color);
+  font-size: 1rem;
+  font-weight: 500;
+  border-left: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  transition: 0.25s ease;
+}
+
+.custom-ul li:hover {
+  border-left: 2px solid var(--accent-color);
+  transform: translateX(3px);
+}
+
+.custom-ul li::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  transition: 0.25s ease;
+}
+
+.custom-ul li:hover::before {
+  background: color-mix(in srgb, var(--accent-color), black 15%);
+}
+
+/* Inner UL elements slightly smaller */
+.custom-ul ul li {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  padding-left: 28px;
+}
+
+/* ================================
+   ORDERED LIST (NUMBERED)
+   ================================ */
+
+.custom-ol {
+  counter-reset: custom-counter;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.custom-ol > li {
+  counter-increment: custom-counter;
+  position: relative;
+  padding: 10px 0 10px 45px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  border-left: 3px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+  margin-bottom: 8px;
+  transition: 0.25s ease;
+}
+
+.custom-ol > li:hover {
+  border-left: 3px solid var(--accent-color);
+  transform: translateX(3px);
+}
+
+/* Number circle */
+.custom-ol > li::before {
+  content: counter(custom-counter);
+  position: absolute;
+  left: 10px;
+  top: 7px;
+  width: 24px;
+  height: 24px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Nested ordered list */
+.custom-ol ol {
+  counter-reset: inner-counter;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.custom-ol ol li {
+  counter-increment: inner-counter;
+  position: relative;
+  padding: 8px 0 8px 45px;
+  font-size: 0.95rem;
+  color: var(--default-color);
+  opacity: 0.9;
+}
+
+.custom-ol ol li::before {
+  content: counters(inner-counter, ".") ".";
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+.mobile-nav-toggle:hover {
+    color: #f52106;
+    transform: scale(0.8);
+}
+
+:root{
+--bg-color: #ffffff;
+--text-color: #111827; /* dark for contrast */
+--accent-color: #ed2b2b; /* strong accent */
+--muted-color: #94a3b8;
+--focus-ring: 3px solid color-mix(in srgb, var(--accent-color), black 10%);
+}
+
+
+/* Ensure base contrast isn't accidentally overridden */
+body{
+background-color: var(--bg-color);
+color: var(--text-color);
+}
+
+
+/* ==================================================
+1) KEYFRAMES: Fade-in section + social icon movement
+==================================================
+*/
+@keyframes fadeInUp {
+0% {
+opacity: 0;
+transform: translateY(18px);
+}
+60%{
+opacity: 1;
+transform: translateY(-6px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+
+@keyframes socialBounce {
+0% {
+transform: translateY(0) rotate(0deg);
+}
+30% {
+transform: translateY(-6px) rotate(-6deg);
+}
+60% {
+transform: translateY(3px) rotate(3deg);
+}
+100%{
+transform: translateY(0) rotate(0deg);
+}
+}
+
+
+/* Subtle emphasis for hover (keeps motion short) */
+@keyframes socialFloat {
+0% { transform: translateY(0); }
+50% { transform: translateY(-4px); }
+100% { transform: translateY(0); }
+}
+
+
+/* ==================================================
+2) PAGE PRELOADER (pure CSS)
+- Two variants included: spinner (circular) and pulsing-dots
+- These are decorative elements you can place in the page.
+==================================================
+*/
+/* Spinner keyframes */
+@keyframes spin360 {
+from { transform: rotate(0deg); }
+to { transform: rotate(360deg); }
+}
+
+
+/* Pulsing dots */
+@keyframes pulseDot {
+0% { transform: scale(0.6); opacity: 0.45; }
+50% { transform: scale(1.15); opacity: 1; }
+100% { transform: scale(0.6); opacity: 0.45; }
+}
+
+
+/* ------------------
+Preloader container
+------------------ */
+#preloader {
+position: fixed;
+inset: 0;
+background: var(--bg-color);
+z-index: 9999;
+transition:all 0.3s ease-out;
+display: flex;
+animation: duration 0.3s ease-out forwards;
+}
+#preloader:before{
+content: "";
+position: fixed;
+top:50%;
+left:50%;
+border:6px solid #e71a1a;
+border-color: #e71a1a transparent #e71a1a transparent;
+width:60px;
+height:60px;
+animation: animation-preloader 1.2s linear infinite;
+}
+@keyframes duration {0%{opacity:1;}
+100%{opacity:0; visibility:hidden;}}
+@keyframes animation-preloader {
+  0% {
+    transform: rotate(0deg);
+  }100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+    .services{animation:none; background-size:100% 100%;}
+    .shape{animation:none !important;}
+}
+@keyframes gradientShift {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+.services{
+background:linear-gradient(120deg,#7c0202,#ed2b2b,#ff8e3c,#ffd93d,#22f857,#338573,#4fc3f7,#8e2de2,#2d0b54,#000000);
+background-size:400% 400%;
+animation:gradientShift 15s ease infinite;
+padding:80px 0; color:#0f172a;
+}
+
+
+/* About Section – Shapes */
+.contact{position:relative; overflow:hidden;}
+.shape{position:absolute; opacity:1; filter:blur(1px);}
+
+
+/* Circle */
+.shape-circle{width:80px;height:80px;border-radius:50%;background:#f903e9;animation:floatShape 0.001s ease-in-out infinite; top:100px; left:500px;}
+/* Triangle */
+.shape-triangle{width:0;height:0;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:100px solid #fb089a;animation:rotateShape 0.01s linear infinite; bottom:5%; right:10%;}
+/* Square */
+.shape-square{width:70px;height:70px;background:#ffd93d;animation:scaleShape 1s ease-in-out infinite; top:20px; right:20px;}
+
+
+@keyframes rotateShape {0%{transform:rotate(0);}100%{transform:rotate(360deg);}}
+@keyframes scaleShape {0%{transform:scale(1);}50%{transform:scale(1.3);}100%{transform:scale(1);}}
+@keyframes floatShape {0%{transform:translateY(0);}50%{transform:translateY(-25px);}100%{transform:translateY(0);}}
+
+.game-section {
+  margin-top: 60px;
+}
+
+.game-board {
+  display: grid;
+  gap: 12px;
+  padding: 10px;
+}
+
+/* Kortelių dizainas */
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  background: #f0f0f0;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.card .face {
+  position: absolute;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card .back {
+  background: white;
+}
+
+.card .front {
+  background: #e9eef8;
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .front {
+  transform: rotateY(0deg);
+}
+
+.stats-box {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #2a0e66;
+}
+.startBtn{
+  background-color: #2a0e66;
+  color: white;
+  border: none;
+  padding: 7px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.startBtn:hover {
+  background-color: #1a0a44;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.resetBtn{
+  background-color: #2a0e66;
+  color: white;
+  border: none;
+  padding: 7px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.resetBtn:hover {
+  background-color: #1a0a44;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Dynamic grid (JS nustato stulpelių skaičių) */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    font-size: 28px;
+  }
+}
